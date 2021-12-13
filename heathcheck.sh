@@ -1,3 +1,4 @@
+commit=true
 KEYSARRAY=()
 URLSARRAY=()
 
@@ -36,12 +37,20 @@ do
     sleep 5
   done
   dateTime=$(date +'%Y-%m-%d %H:%M')
-
-  echo $dateTime, $result >> "logs/${key}_report.log"
+  if [[ $commit == true ]]
+  then
+    echo $dateTime, $result >> "logs/${key}_report.log"
+  else
+    echo "    $dateTime, $result"
+  fi
 done
 
-git config --global user.name 'Marcus Nightingale'
-git config --global user.email 'marcusnightingale.1@gmail.com'
-git add -A --force logs/
-git commit -am '[Automated] Update Health Check Logs'
-git push
+if [[ $commit == true ]]
+then
+  # Let's make Vijaye the most productive person on GitHub.
+  git config --global user.name 'Vijaye Raji'
+  git config --global user.email 'vijaye@statsig.com'
+  git add -A --force logs/
+  git commit -am '[Automated] Update Health Check Logs'
+  git push
+fi

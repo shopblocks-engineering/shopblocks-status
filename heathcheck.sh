@@ -23,7 +23,7 @@ do
   url="${URLSARRAY[index]}"
   echo "  $key=$url"
 
-  for i in 1 2 3 4;
+  for i in 1 2 3 4 5;
   do
     response=$(curl --write-out '%{http_code}' --silent --output /dev/null $url)
     if [ "$response" -eq 200 ] || [ "$response" -eq 202 ] || [ "$response" -eq 301 ] || [ "$response" -eq 307 ]; then
@@ -48,8 +48,8 @@ done
 if [[ $commit == true ]]
 then
   # Let's make Vijaye the most productive person on GitHub.
-  git config --global user.name 'Vijaye Raji'
-  git config --global user.email 'vijaye@statsig.com'
+  git config --global user.name 'Marcus Nightingale'
+  git config --global user.email 'marcusnightingale.1@gmail.com'
   git add -A --force logs/
   git commit -am '[Automated] Update Health Check Logs'
   git push

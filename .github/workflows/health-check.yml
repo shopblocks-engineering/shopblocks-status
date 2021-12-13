@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run Shell Script
         id: shell_script_run
-        run: bash ./health-check.sh
+        run: bash ./healthcheck.sh

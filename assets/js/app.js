@@ -42,7 +42,7 @@ function constructStatusLine(key, relDay, upTimeArray) {
 }
 
 function getColor(uptimeVal) {
-    return uptimeVal == null ? "nodata" : uptimeVal === 1 ? "success" : uptimeVal < 0.3 ? "failure" : "partial";
+    return uptimeVal == null ? "nodata" : uptimeVal === 1 ? "success" : uptimeVal < 0.3 ? "danger" : "warning";
 }
 
 function constructStatusSquare(key, date, uptimeVal) {
@@ -81,7 +81,7 @@ function applyTemplateSubstitutions(node, parameters) {
         node.setAttribute(attr, templatizeString(attrVal, parameters));
     }
 
-    if (node.childElementCount == 0) {
+    if (node.childElementCount === 0) {
         node.innerText = templatizeString(node.innerText, parameters);
     } else {
         const children = Array.from(node.children);
@@ -105,9 +105,9 @@ function getStatusText(color) {
         ? "No Data Available"
         : color === "success"
             ? "Fully Operational"
-            : color === "failure"
+            : color === "danger"
                 ? "Major Outage"
-                : color === "partial"
+                : color === "warning"
                     ? "Partial Outage"
                     : "Unknown";
 }
@@ -117,9 +117,9 @@ function getStatusDescriptiveText(color) {
         ? "No Data Available: Health check was not performed."
         : color === "success"
             ? "No downtime recorded today."
-            : color === "failure"
+            : color === "danger"
                 ? "Major outages recorded today."
-                : color === "partial"
+                : color === "warning"
                     ? "Partial outages recorded today."
                     : "Unknown";
 }
@@ -186,7 +186,7 @@ function splitRowsByDate(rows) {
             dateValues[dateStr] = resultArray;
             if (dateValues.length > maxDays) {
                 break;
-            }
+            }``
         }
 
         let result = 0;

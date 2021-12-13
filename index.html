@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="assets/css/normalize.css" rel="stylesheet">
+        <link href="assets/css/rocket.css" rel="stylesheet">
+
+        <title>Shopblocks - Service Status</title>
+    </head>
+    <body>
+        <div class="container fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="card card-centered">
+                        <div class="card-body">
+                            <div class="centered mb-5">
+                                <img alt="Shopblocks" src="/assets/img/logo.png" style="width: 40px; filter: invert(1);">
+                                <span class="badge">Server Status</span>
+                            </div>
+
+                            <div id="reports" class="reports-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="templates" style="display: none">
+            <div class="report-wrapper bordered mb-4 p-4" id="report-wrapper">
+                <div class="pb-2" style="display: inline-flex">
+                    <h6 class="bold uppercase">$title&nbsp</h6>
+                    <span class="ms-4 chip $color">$status</span>
+                </div>
+
+                <a class="link-muted" href="$url" target="_blank">$url</a>
+                <div class="u-pull-right">$upTime in the last 30 days</div>
+
+                <div id="statusSquareTemplate" class="statusSquare $color" data-status="$color"></div>
+                <div id="statusLineTemplate" class="statusLine"></div>
+                <div id="statusStreamContainerTemplate" class="statusStreamContainer"></div>
+            </div>
+        </div>
+
+        <div id="tooltip" class="tooltip" style="opacity: 0">
+            <div id="tooltip-arrow" class="tooltip-arrow"></div>
+            <div id="tooltip-datetime" class="tooltip-datetime"></div>
+            <div id="tooltip-status" class="tooltip-status"></div>
+            <hr />
+            <div id="tooltip-description" class="tooltip-description"></div>
+        </div>
+    </body>
+    <script src="assets/js/app.js"></script>
+    <script>genAllReports();</script>
+</html>

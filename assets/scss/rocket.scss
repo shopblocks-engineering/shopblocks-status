@@ -1,0 +1,45 @@
+/*
+ *  ______              __           __
+ * |   __ \.-----.----.|  |--.-----.|  |_   .----.-----.-----.
+ * |      <|  _  |  __||    <|  -__||   _|__|  __|__ --|__ --|
+ * |___|__||_____|____||__|__|_____||____|__|____|_____|_____|
+ *
+ * Version: 0.2.0
+ * Copyright: 2021
+ * Author: Marcus Nightingale
+ *
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+@import "variables";
+
+html {
+  font-size: 62.5%;
+  background-color: $color-background;
+}
+
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+}
+
+@import "grid";
+@import "typography";
+@import "buttons";
+@import "forms";
+@import "lists";
+@import "code";
+@import "tables";
+@import "cards";
+@import "spacing";
+@import "utilities";
+@import "misc";
+@import "media";
+@import "tooltips";
+
+// Added the Bootstrap 5 spacing classes
+@import "bootstrap_spacing";

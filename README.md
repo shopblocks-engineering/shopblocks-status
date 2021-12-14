@@ -1,3 +1,3 @@
 # Shopblocks Platform Status
 
-[![Scheduled Health Check](https://github.com/Marcus-Nightingale/shopblocks-status/actions/workflows/healthcheck.yml/badge.svg)](https://github.com/Marcus-Nightingale/shopblocks-status/actions/workflows/healthcheck.yml)
+[![Shopblocks Platform Health Check](https://github.com/Marcus-Nightingale/shopblocks-status/actions/workflows/main.yml/badge.svg)](https://github.com/Marcus-Nightingale/shopblocks-status/actions/workflows/main.yml)

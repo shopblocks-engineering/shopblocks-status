@@ -25,19 +25,41 @@ do
   url="${URLSARRAY[index]}"
   echo "  $key=$url"
 
+#  echo "$url"
+#  status_code=$(curl --write-out "%{http_code}" --silent --output /dev/null "${url}")
+#  echo "$status_code"
+
   for i in 1 2 3 4;
   do
-    echo $(curl --write-out '%{http_code}' --silent --output /dev/null $url)
     status_code=$(curl --write-out '%{http_code}' --silent --output /dev/null $url)
-    echo "$status_code"
-    if [ "$status_code" -ne 200 ] || [ "$status_code" -eq 202 ] || [ "$status_code" -eq 301 ] || [ "$status_code" -eq 307 ]; then
+    if [ "$status_code" -eq 200 ] || [ "$status_code" -eq 202 ] || [ "$status_code" -eq 301 ] || [ "$status_code" -eq 307 ]; then
       result="success"
+      break
     else
-      result="failed"
+      if [ "$status_code" -eq 302 ]; then
+        status_code=$(curl --write-out '%{http_code}' --silent --output /dev/null "$url/login")
+
+        if [ "$status_code" -eq 200 ] || [ "$status_code" -eq 202 ] || [ "$status_code" -eq 301 ] || [ "$status_code" -eq 307 ]; then
+          result="success"
+          break
+        else
+          result="failed"
+        fi
+      else
+        result="failed"
+      fi
     fi
-    if [ "$result" = "success" ]; then
+
+    if [ "$url" == "https://api.shopblocks.com/test-client" ] && [ "$status_code" -eq 500 ]; then
+      result="success"
       break
     fi
+
+    if [ "$url" == "https://search.shopblocks.com" ] && [ "$status_code" -eq 403 ]; then
+      result="success"
+      break
+    fi
+
     sleep 5
   done
   dateTime=$(date +'%Y-%m-%d %H:%M')

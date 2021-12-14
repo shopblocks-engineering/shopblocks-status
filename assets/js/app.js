@@ -9,8 +9,6 @@ function changeMaxDays() {
     } else {
         maxDays = 30;
     }
-
-    document.getElementById('max-days').innerText = maxDays;
 }
 
 async function genReportLog(container, key, url) {

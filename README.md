@@ -1,1 +1,1 @@
-# shopblocks-status
+# Shopblocks Platform Status

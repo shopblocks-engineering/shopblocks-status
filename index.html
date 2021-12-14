@@ -19,7 +19,13 @@
                                 <img alt="Shopblocks" src="/assets/img/logo.png" style="width: 40px; filter: invert(1);">
                                 <span class="badge">Server Status</span>
                             </div>
-
+                            <div id="tooltip" class="tooltip" style="opacity: 0">
+                                <div id="tooltip-arrow" class="tooltip-arrow"></div>
+                                <div id="tooltip-datetime" class="tooltip-datetime"></div>
+                                <div id="tooltip-status" class="tooltip-status"></div>
+                                <hr />
+                                <div id="tooltip-description" class="tooltip-description"></div>
+                            </div>
                             <div id="reports" class="reports-wrapper"></div>
                         </div>
                     </div>
@@ -35,20 +41,11 @@
                 </div>
 
                 <a class="link-muted" href="$url" target="_blank">$url</a>
-                <div class="u-pull-right">$upTime in the last 30 days</div>
-
-                <div id="statusSquareTemplate" class="statusSquare $color" data-status="$color"></div>
-                <div id="statusLineTemplate" class="statusLine"></div>
-                <div id="statusStreamContainerTemplate" class="statusStreamContainer"></div>
+                <small class="u-pull-right text-muted">$upTime in the last 30 days</small>
             </div>
-        </div>
-
-        <div id="tooltip" class="tooltip" style="opacity: 0">
-            <div id="tooltip-arrow" class="tooltip-arrow"></div>
-            <div id="tooltip-datetime" class="tooltip-datetime"></div>
-            <div id="tooltip-status" class="tooltip-status"></div>
-            <hr />
-            <div id="tooltip-description" class="tooltip-description"></div>
+            <div id="status-square" class="status-square $color" data-status="$color"></div>
+            <div id="status-line" class="status-line"></div>
+            <div id="stream-wrapper" class="stream-wrapper" style="display: inline-flex"></div>
         </div>
     </body>
     <script src="assets/js/app.js"></script>

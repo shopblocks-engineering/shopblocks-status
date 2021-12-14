@@ -5,6 +5,10 @@ a {
     color: $color-muted !important;
     font-size: 13px;
     text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark !important;
+    }
   }
 }
 

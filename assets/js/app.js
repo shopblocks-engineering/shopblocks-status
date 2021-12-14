@@ -13,7 +13,7 @@ async function genReportLog(container, key, url) {
 }
 
 function constructStatusStream(key, url, uptimeData) {
-    let streamContainer = templatize("statusStreamContainerTemplate");
+    let streamContainer = templatize("stream-wrapper");
     for (var ii = maxDays - 1; ii >= 0; ii--) {
         let line = constructStatusLine(key, ii, uptimeData[ii]);
         streamContainer.appendChild(line);
@@ -47,7 +47,7 @@ function getColor(uptimeVal) {
 
 function constructStatusSquare(key, date, uptimeVal) {
     const color = getColor(uptimeVal);
-    let square = templatize("statusSquareTemplate", {
+    let square = templatize("status-square", {
         color: color,
         tooltip: getTooltip(key, date, color),
     });
@@ -208,16 +208,16 @@ function showTooltip(element, key, date, color) {
     clearTimeout(tooltipTimeout);
     const toolTipDiv = document.getElementById("tooltip");
 
-    document.getElementById("tooltipDateTime").innerText = date.toDateString();
-    document.getElementById("tooltipDescription").innerText = getStatusDescriptiveText(color);
+    document.getElementById("tooltip-datetime").innerText = date.toDateString();
+    document.getElementById("tooltip-description").innerText = getStatusDescriptiveText(color);
 
-    const statusDiv = document.getElementById("tooltipStatus");
+    const statusDiv = document.getElementById("tooltip-status");
     statusDiv.innerText = getStatusText(color);
     statusDiv.className = color;
 
-    toolTipDiv.style.top = element.offsetTop + element.offsetHeight + 10;
+    toolTipDiv.style.top = element.offsetTop + element.offsetHeight + 10 + 'px';
     toolTipDiv.style.left =
-        element.offsetLeft + element.offsetWidth / 2 - toolTipDiv.offsetWidth / 2;
+        element.offsetLeft + element.offsetWidth / 2 - toolTipDiv.offsetWidth / 2 + 'px';
     toolTipDiv.style.opacity = "1";
 }
 

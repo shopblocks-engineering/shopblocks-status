@@ -28,6 +28,7 @@ do
   for i in 1 2 3 4;
   do
     status_code=$(curl --write-out '%{http_code}' --silent --output /dev/null $url)
+    echo "$status_code"
     if [ "$status_code" -ne 200 ] || [ "$status_code" -eq 202 ] || [ "$status_code" -eq 301 ] || [ "$status_code" -eq 307 ]; then
       result="success"
     else

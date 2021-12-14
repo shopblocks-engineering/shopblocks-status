@@ -29,6 +29,17 @@ hr {
   }
 }
 
+@media (max-width: 550px) {
+  .ms-4.chip {
+    margin-left: .25rem !important;
+  }
+
+  .chip {
+    font-size: 10px !important;
+    padding: 2px 10px !important;
+  }
+}
+
 .badge {
   display: inline-block;
   padding: 0.35em 0.65em;

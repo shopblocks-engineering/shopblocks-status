@@ -10,7 +10,7 @@
 
         <title>Shopblocks - Service Status</title>
     </head>
-    <body>
+    <body style="overflow-x: hidden;">
         <div class="container fluid" style="max-width: 1048px;">
             <div class="row">
                 <div class="col">
@@ -42,7 +42,7 @@
                 </div>
 
                 <a class="link-muted" href="$url" target="_blank">$url</a>
-                <small class="u-pull-right text-muted">$upTime in the last 30 days</small>
+                <small class="u-pull-right text-muted">$upTime in the last <span id="max-days"></span> days</small>
             </div>
             <div id="status-square" class="status-square $color" data-status="$color"></div>
             <div id="status-line" class="status-line"></div>
@@ -50,5 +50,7 @@
         </div>
     </body>
     <script src="assets/js/app.js"></script>
-    <script>genAllReports();</script>
+    <script>
+        genAllReports();
+    </script>
 </html>

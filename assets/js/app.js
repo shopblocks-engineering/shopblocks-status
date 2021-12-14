@@ -1,4 +1,17 @@
-const maxDays = 30;
+let maxDays = 30;
+
+window.addEventListener('resize', changeMaxDays);
+function changeMaxDays() {
+    let width = document.documentElement.clientWidth;
+
+    if (width <= 750) {
+        maxDays = 15;
+    } else {
+        maxDays = 30;
+    }
+
+    document.getElementById('max-days').innerText = maxDays;
+}
 
 async function genReportLog(container, key, url) {
     const response = await fetch("logs/" + key + "_report.log");
@@ -216,8 +229,7 @@ function showTooltip(element, key, date, color) {
     statusDiv.className = color;
 
     toolTipDiv.style.top = element.offsetTop + element.offsetHeight + 10 + 'px';
-    toolTipDiv.style.left =
-        element.offsetLeft + element.offsetWidth / 2 - toolTipDiv.offsetWidth / 2 + 'px';
+    toolTipDiv.style.left = element.offsetLeft + element.offsetWidth / 2 - toolTipDiv.offsetWidth / 2 + 'px';
     toolTipDiv.style.opacity = "1";
 }
 
@@ -229,6 +241,7 @@ function hideTooltip() {
 }
 
 async function genAllReports() {
+    changeMaxDays();
     const response = await fetch("urls.cfg");
     const configText = await response.text();
     const configLines = configText.split("\n");

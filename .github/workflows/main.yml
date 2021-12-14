@@ -4,7 +4,7 @@ name: Shopblocks Platform Health Check
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 * * * *"
+    - cron: "*/10 * * * *"
 
 jobs:
   health_check_job:

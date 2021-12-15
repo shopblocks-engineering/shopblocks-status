@@ -1,10 +1,10 @@
 const cachename = 'cache';
 const assets = [
-    '../assets/js/app.js',
-    '../assets/css/normalize.css',
-    '../assets/rocket.css',
-    '../assets/img/logo.ico',
-    '../assets/img/logo.png'
+    'shopblocks-status/assets/js/app.js',
+    'shopblocks-status/assets/css/normalize.css',
+    'shopblocks-status/assets/rocket.css',
+    'shopblocks-status/assets/img/logo.ico',
+    'shopblocks-status/assets/img/logo.png'
 ];
 
 self.addEventListener('install', (event) => {

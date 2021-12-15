@@ -4,7 +4,7 @@
  * |      <|  _  |  __||    <|  -__||   _|__|  __|__ --|__ --|
  * |___|__||_____|____||__|__|_____||____|__|____|_____|_____|
  *
- * Version: 0.2.0
+ * Version: 0.3.0
  * Copyright: 2021
  * Author: Marcus Nightingale
  *
@@ -13,7 +13,6 @@
  */
 html {
   font-size: 62.5%;
-  background-color: #f5f6f8;
 }
 
 body {
@@ -23,6 +22,7 @@ body {
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
+  background-color: #f5f6f8;
 }
 
 * {
@@ -588,12 +588,12 @@ hr {
 }
 
 .success {
-  background-color: #4cae50;
+  background-color: #88c459;
   color: #fff;
 }
 
 .danger {
-  background-color: #f44336;
+  background-color: #f5414f;
   color: #fff;
 }
 
@@ -603,8 +603,12 @@ hr {
 }
 
 .warning {
-  background-color: #ff9800;
+  background-color: #ffd137;
   color: #fff;
+}
+
+.invert {
+  filter: invert(1);
 }
 
 /* Larger than mobile */
@@ -626,7 +630,7 @@ hr {
   width: 240px;
   transition: opacity 0.2s;
 }
-.tooltip.tooltip-arrow {
+.tooltip .tooltip-arrow {
   position: absolute;
   bottom: 100%;
   width: 4px;
@@ -636,28 +640,63 @@ hr {
   left: 50%;
   margin-left: -2px;
 }
-.tooltip.tooltip-datetime {
+.tooltip .tooltip-datetime {
   font-size: 12px;
   color: #7c7c7c;
   text-transform: uppercase;
   font-weight: 600;
 }
-.tooltip.tooltip-key {
+.tooltip .tooltip-key {
   color: #ccc;
   font-size: 10px;
 }
-.tooltip.tooltip-description {
+.tooltip .tooltip-description {
   margin-top: 12px;
   font-size: 14px;
   color: #181818;
 }
-.tooltip#tooltip-status {
+.tooltip #tooltip-status {
   padding: 4px 8px;
   border-radius: 15px;
   font-size: 12px;
   font-weight: bold;
   margin-top: 6px;
   display: inline-block;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.87);
+}
+.dark-mode .card {
+  background-color: #1c1c1e;
+}
+.dark-mode .badge {
+  background-color: rgba(28, 28, 30, 0.9);
+}
+.dark-mode img.invert {
+  filter: invert(0);
+}
+.dark-mode .bordered {
+  border: 2px solid rgba(121, 121, 122, 0.2);
+}
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6, .dark-mode b {
+  color: #79797a;
+}
+.dark-mode .success, .dark-mode .danger, .dark-mode .warning {
+  color: #1c1c1e;
+}
+.dark-mode .success {
+  background-color: #88c459;
+}
+.dark-mode .danger {
+  background-color: #f5414f;
+}
+.dark-mode .nodata {
+  background-color: #79797a;
+}
+.dark-mode .warning {
+  background-color: #ffd137;
 }
 
 /*!

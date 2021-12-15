@@ -1,0 +1,44 @@
+.dark-mode {
+  background-color: $dark-mode-background;
+  color: $dark-mode-text;
+
+  .card {
+    background-color: $dark-mode-card-background;
+  }
+
+  .badge {
+    background-color: $dark-mode-badge-background;
+  }
+
+  img.invert {
+    filter: invert(0);
+  }
+
+  .bordered {
+    border: 2px solid $dark-mode-border;
+  }
+
+  h1, h2, h3, h4, h5 ,h6, b {
+    color: $dark-mode-alt-text;
+  }
+
+  .success, .danger, .warning {
+    color: $dark-mode-card-background;
+  }
+
+  .success {
+    background-color: $dark-mode-success;
+  }
+
+  .danger {
+    background-color: $dark-mode-error;
+  }
+
+  .nodata {
+    background-color: rgb(121, 121, 122);
+  }
+
+  .warning {
+    background-color: $dark-mode-warning;
+  }
+}

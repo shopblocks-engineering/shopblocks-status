@@ -4,7 +4,7 @@
  * |      <|  _  |  __||    <|  -__||   _|__|  __|__ --|__ --|
  * |___|__||_____|____||__|__|_____||____|__|____|_____|_____|
  *
- * Version: 0.2.0
+ * Version: 0.3.0
  * Copyright: 2021
  * Author: Marcus Nightingale
  *
@@ -16,7 +16,6 @@
 
 html {
   font-size: 62.5%;
-  background-color: $color-background;
 }
 
 body {
@@ -25,6 +24,7 @@ body {
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
+  background-color: $color-background;
 }
 
 @import "grid";
@@ -40,6 +40,7 @@ body {
 @import "misc";
 @import "media";
 @import "tooltips";
+@import "dark_mode";
 
 // Added the Bootstrap 5 spacing classes
 @import "bootstrap_spacing";

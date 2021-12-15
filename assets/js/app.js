@@ -11,6 +11,13 @@ function changeMaxDays() {
     }
 }
 
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+if (prefersDarkScheme.matches) {
+    document.body.classList.add("dark-mode");
+} else {
+    document.body.classList.remove("dark-mode");
+}
+
 async function genReportLog(container, key, url) {
     const response = await fetch("logs/" + key + "_report.log");
     let statusLines = "";

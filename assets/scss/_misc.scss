@@ -88,12 +88,12 @@ hr {
 }
 
 .success {
-  background-color: #4cae50;
+  background-color: $color-success;
   color: #fff;
 }
 
 .danger {
-  background-color: #f44336;
+  background-color: $color-error;
   color: #fff;
 }
 
@@ -103,6 +103,10 @@ hr {
 }
 
 .warning {
-  background-color: #ff9800;
+  background-color: $color-warning;
   color: #fff;
+}
+
+.invert {
+  filter: invert(1);
 }

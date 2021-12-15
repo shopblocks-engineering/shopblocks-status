@@ -16,7 +16,7 @@ $color-muted: #6c757d;
 
 $color-success: rgb(136,196,89);
 $color-error: rgb(245,65,79);
-$color-warning: #ffd137;
+$color-warning: rgb(255,209,55);
 
 $color-text:$color-grey-1;
 $color-text-heading: $color-black;
@@ -25,3 +25,13 @@ $color-text-subtle: $color-grey-6;
 $color-border: $color-grey-2;
 
 $color-background: #f5f6f8;
+
+$dark-mode-background: #121212;
+$dark-mode-text: rgba(255,255,255,.87);
+$dark-mode-alt-text: rgb(121,121,122);
+$dark-mode-border: rgba(121,121,122,.2);
+$dark-mode-card-background: rgb(28,28,30);
+$dark-mode-badge-background: rgba(28,28,30, .9);
+$dark-mode-success: opacify($color-success, 0.8);
+$dark-mode-error: opacify($color-error, 0.8);
+$dark-mode-warning: opacify($color-warning, 0.8);
